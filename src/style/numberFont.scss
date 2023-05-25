@@ -1,0 +1,8 @@
+@mixin numberFont {
+  font-family: 'ITC Avant Garde Gothic' !important;
+}
+
+//  数字自定义字体
+.numberFont {
+  @include numberFont;
+}

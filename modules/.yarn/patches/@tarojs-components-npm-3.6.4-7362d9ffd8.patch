@@ -1,0 +1,13 @@
+diff --git a/types/ScrollView.d.ts b/types/ScrollView.d.ts
+index 2f53cedf4d3d7a15726253ce8bd902f6c3fffb66..b88edde07d189d163ce9baa87340de304b52112e 100644
+--- a/types/ScrollView.d.ts
++++ b/types/ScrollView.d.ts
+@@ -137,7 +137,7 @@ interface ScrollViewProps extends StandardProps {
+    * @supported weapp
+    * @default 'list'
+    */
+-  type: 'list' | 'custom'
++  type?: 'list' | 'custom'
+   /** 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。
+    * @supported weapp
+    * @default false

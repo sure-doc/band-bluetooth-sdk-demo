@@ -1,0 +1,13 @@
+{
+  "name": "@components/common",
+  "version": "1.1.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@my/base-packages": "workspace:*"
+  },
+  "peerDependencies": {
+    "classnames": "*",
+    "react": "*",
+    "type-fest": "*"
+  }
+}

@@ -1,0 +1,22 @@
+@import './myFont2.scss';
+
+// list公用样式
+.list_css {
+  margin: 0 !important;
+}
+
+// 公用样式
+.justifyContent_center {
+  display: flex;
+  justify-content: center;
+}
+
+// D-DIN数字字体
+.d-din{
+  font-family: DDIN !important;
+}
+
+//  数字自定义字体2
+.ddinFont {
+  font-family: 'D-DIN' !important;
+}

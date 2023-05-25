@@ -1,0 +1,79 @@
+diff --git a/index.js b/index.js
+index c3e33589e9ed992175c12440ba110b5325dc6b03..cc966d006f1c78b10b48c8c13cea5af3453fd7bf 100644
+--- a/index.js
++++ b/index.js
+@@ -30,7 +30,13 @@ const deviceRatio = {
+ const DEFAULT_WEAPP_OPTIONS = {
+   platform: 'weapp',
+   designWidth: 750,
+-  deviceRatio
++  deviceRatio,
++  // hb: 默认值
++  baseFontSize: 40,
++  // hb: 是否转换为 rpx
++  toRpx: true,
++  // hb: 是否转为 rem
++  toRem: false,
+ }
+ 
+ const processed = Symbol('processed')
+@@ -48,13 +54,28 @@ module.exports = (options = {}) => {
+ 
+   switch (options.platform) {
+     case 'h5': {
+-      targetUnit = options.targetUnit ?? 'rem'
+-      options.rootValue = (input) => {
+-        if (targetUnit === 'vw') {
+-          baseFontSize = 0.5 * designWidth(input) / 100
++      // hb: before
++      // targetUnit = options.targetUnit ?? 'rem'
++      // options.rootValue = (input) => {
++      //   if (targetUnit === 'vw') {
++      //     baseFontSize = 0.5 * designWidth(input) / 100
++      //   }
++      //   return (baseFontSize / options.deviceRatio[designWidth(input)]) * 2
++      // }
++      // hb: after
++      if (options.toRem) {
++        targetUnit = options.targetUnit ?? 'rem'
++        options.rootValue = (input) => {
++          if (targetUnit === 'vw') {
++            baseFontSize = 0.5 * designWidth(input) / 100
++          }
++          return (baseFontSize / options.deviceRatio[designWidth(input)]) * 2
+         }
+-        return (baseFontSize / options.deviceRatio[designWidth(input)]) * 2 
++      } else {
++        options.rootValue = (input) => options.deviceRatio[designWidth(input)] * 2
++        targetUnit = 'px'
+       }
++
+       transUnits.push('rpx')
+       break
+     }
+@@ -75,8 +96,23 @@ module.exports = (options = {}) => {
+     }
+     default: {
+       // mini-program
+-      options.rootValue = (input) => 1 / options.deviceRatio[designWidth(input)]
+-      targetUnit = 'rpx'
++      // hb: before
++      // options.rootValue = (input) => 1 / options.deviceRatio[designWidth(input)]
++      // targetUnit = 'rpx'
++
++      // hb: after
++      // bin: 按照 750px 设计稿开发，换算 px 但是不转换 rpx
++      if (options.toRpx) {
++        options.rootValue = input => 1 / options.deviceRatio[designWidth(input)]
++        targetUnit = 'rpx'
++      } else if (options.toRem)  {
++        options.rootValue = input => baseFontSize * options.deviceRatio[designWidth(input)] * 2
++        targetUnit = 'rem'
++      } else {
++        options.rootValue = input => options.deviceRatio[designWidth(input)] * 2
++        targetUnit = 'px'
++      }
++
+     }
+   }
+ 

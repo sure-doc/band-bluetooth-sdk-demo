@@ -1,0 +1,22 @@
+{
+  "name": "@my/eslint-config-my-taro",
+  "version": "1.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "@my/eslint-config-my": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint-config-alloy": "^5.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.18.0 <9.0.0",
+    "eslint-config-taro": "*",
+    "prettier": ">=2",
+    "typescript": "^4 || ^5"
+  }
+}

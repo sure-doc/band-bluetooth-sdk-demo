@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Packages/taro-assets" />
+
+- 修改 taro 配置：`/config/index.js`
+
+```typescript
+const taroAssets = require('@my/taro-assets');
+const path = require('path');
+
+let config = {
+  ...
+}
+
+// 静态资源配置
+config = taroAssets(config, {
+  outputPath: path.join('..', 'assets-dist'), // 静态资源输出目录，这里只能是 taro 输出目录的相对路径
+  server: {
+    enabled: process.env.MY_DEV === 'true', // 是否启动静态资源服务
+    assetsPath: path.resolve(__dirname, '../assets-dist'), // 静态资源输出目录，绝对路径
+    port: 4005, // 静态资源端口
+  },
+});
+
+
+```
+
+- 初始化静态资源地址:
+
+需要在引用图片之前执行
+
+`/src/init.ts`:
+
+```typescript
+import configAssetsUrl from '@my/taro-assets/configAssetsUrl';
+
+// 配置静态资源地址
+configAssetsUrl(() => {
+  return 'http://family-static-assets.dev.suredoc.cn';
+});
+```
+
+`/src/app.tsx`:
+
+```typescript
+// 首行
+import './init';
+
+// ...其他内容
+```

@@ -1,0 +1,287 @@
+/** 组件分类按字母排序 **/
+
+@use './vars.module.scss' as vars;
+
+// ==================== Badge ====================
+$badge-background-color: #ff4d4f !default;
+$badge-font-color: #fff !default;
+$badge-font-size: vars.$font-size-small !default;
+
+$badge-border-width: 2px !default;
+$badge-border-color: #ffffff !default;
+
+$badge-dot-size: 16px !default;
+
+// with badge
+$avatar-with-badge-font-color: vars.$color-gray !default;
+
+// ==================== BigInput ====================
+$big-input-border-width: 1px !default;
+$big-input-border-style: solid !default;
+$big-input-border-color: rgba(0, 0, 0, 0.1) !default;
+$big-input-border-radius: 50px !default;
+
+$big-input-height: 100px !default;
+$big-input-padding: 0 20px 0 40px !default;
+
+// info
+$big-input-info-height: 56px !default;
+$big-input-info-padding: 0 36px !default;
+$big-input-info-font-size: vars.$font-size-small !default;
+$big-input-info-font-color: vars.$font-color-describe !default;
+
+// status error
+$big-input-status-error-border-color: vars.$color-error !default;
+$big-input-status-error-info-font-color: vars.$color-error !default;
+
+// ==================== Card ====================
+
+$card-margin: 0 30px !default;
+$card-padding: 24px !default;
+$card-background-color: #ffffff !default;
+$card-border-radius: vars.$border-radius-large !default;
+
+// ==================== Checkbox ====================
+$checkbox-font-size: vars.$font-size-primary !default;
+$checkbox-font-color: vars.$font-color-primary !default;
+$checkbox-icon-size: 44px !default;
+$checkbox-checked-icon-size: 26px !default;
+$checkbox-checked-icon-color: vars.$color-primary !default;
+
+$checkbox-disabled-font-color: vars.$font-color-disable !default;
+$checkbox-gap: 16px !default;
+
+// ==================== CheckList ====================
+$check-list-item-padding-left: 36px !default;
+$check-list-item-padding-right: 36px !default;
+$check-list-item-icon-size: vars.$font-size-primary !default;
+$check-list-item-icon-color: vars.$color-primary !default;
+$check-list-item-title-font-size: vars.$font-size-primary !default;
+$check-list-item-title-font-color: vars.$color-black !default;
+
+// --- check-list-popup
+$check-list-popup-check-all-font-size: vars.$font-size-primary !default;
+$check-list-popup-check-all-font-color: vars.$color-primary !default;
+
+$check-list-popup-footer-padding: 26px 60px !default;
+
+// --- check-list-popup-group
+$check-list-popup-group-title-height: 76px !default;
+$check-list-popup-group-title-padding-left: 36px !default;
+$check-list-popup-group-title-padding-right: 36px !default;
+$check-list-popup-group-title-background-color: vars.$background-color !default;
+$check-list-popup-group-title-font-size: vars.$font-size-large-title !default;
+$check-list-popup-group-title-font-color: vars.$font-color-title !default;
+
+// ==================== CodeInput ====================
+$code-input-width: 510px !default;
+$code-input-height: 140px !default;
+$code-input-font-size: 60px !default;
+$code-input-font-color: vars.$font-color-title !default;
+
+$code-input-item-width: 64px !default;
+$code-input-item-bottom-border: 2px solid #d8d8d8 !default;
+
+// ==================== DateSwiper ====================
+$date-swiper-margin: 0 !default;
+$date-swiper-height: 100px !default;
+$date-swiper-font-size: vars.$font-size-small !default;
+$date-swiper-font-color: vars.$font-color-describe !default;
+$date-swiper-active-font-color: vars.$font-color-primary !default;
+
+// ==================== Dialog ====================
+$dialog-background-color: #fff !default;
+$dialog-width: 88% !default;
+$dialog-border-radius: vars.$border-radius-large !default;
+$dialog-padding: 60px 40px 46px !default;
+
+// title
+$dialog-title-padding: 0px !default;
+$dialog-title-font-size: vars.$font-size-large-title !default;
+$dialog-title-font-color: vars.$font-color-title !default;
+
+// content
+$dialog-content-padding: 42px 44px 68px !default;
+$dialog-content-font-size: vars.$font-size-title !default;
+$dialog-content-line-height: vars.$line-height-title !default;
+$dialog-content-font-color: vars.$font-color-title !default;
+
+// ==================== Image ====================
+$image-content-bg-color: #f7f8fa !default;
+$image-content-font-size: vars.$font-size-secondary !default;
+$image-content-font-color: #dcdee0 !default;
+$image-content-icon-size: 64px !default;
+$image-content-icon-color: #dcdee0 !default;
+
+// ==================== Input ====================
+$input-padding: 0 16px;
+$input-font-color: vars.$font-color-title !default;
+$input-font-size: vars.$font-size-primary !default;
+$input-line-height: 1.5 !default;
+
+// ==================== list ====================
+
+// liset - card
+$list-card-margin: 0 30px !default;
+$card-border-radius: vars.$border-radius-large !default;
+
+// list-item
+$list-item-min-height: 120px !default;
+$list-item-border-color: vars.$border-color !default;
+$list-item-padding-top: 30px !default;
+$list-item-padding-bottom: 30px !default;
+$list-item-padding-left: 30px !default;
+$list-item-padding-right: 30px !default;
+$list-item-font-color: vars.$font-color-secondary !default;
+$list-item-font-size: vars.$font-size-primary !default;
+$list-item-line-height: 1.5 !default;
+
+$list-item-active-background-color: #efefef !default;
+// list-item - title
+$list-item-title-font-size: vars.$font-size-primary !default;
+$list-item-title-font-color: vars.$font-color-title !default;
+// list-item - description
+$list-item-description-font-color: vars.$font-color-describe !default;
+$list-item-description-font-size: vars.$font-size-secondary !default;
+// list-item - arrow
+$list-item-arrow-color: vars.$font-color-describe !default;
+$list-item-arrow-font-size: 32px !default;
+
+// ==================== LoadMoreTip ====================
+$load-more-tip-padding: 48px 0 !default;
+$load-more-tip-font-size: vars.$font-size-secondary !default;
+$load-more-tip-font-color: vars.$font-color-describe !default;
+
+// ==================== Navigation ====================
+$navigation__z-index: 1000 !default;
+
+$navigation__font-size: vars.$font-size-primary !default;
+$navigation__font-color: vars.$font-color-primary !default;
+
+$navigation__title-font-size: vars.$font-size-title !default;
+$navigation__title-font-color: vars.$font-color-title !default;
+
+$navigation__back-icon-color: vars.$color-black !default;
+
+// ==================== Overlay ====================
+$overlay-background-color: vars.$font-color-disable !default;
+
+// ==================== Picker ====================
+/** PickerView 的高度 */
+$picker_picker-view_height: 400px !default;
+
+// ==================== PickerView ====================
+$picker-view-height: 500px !default;
+
+// column-item
+$picker-view-column-item-height: 80px !default;
+$picker-view-column-item-padding: 0 12px !default;
+$picker-view-column-item-font-size: vars.$font-size-title !default;
+$picker-view-column-item-font-color: vars.$font-color-title !default;
+
+// indicator-unit
+$picker-view-indicator-unit-offset: 42px !default;
+$picker-view-indicator-unit-font-size: vars.$font-size-primary !default;
+$picker-view-indicator-unit-font-color: vars.$font-color-primary !default;
+$picker-view-indicator-unit-font-weight: bold !default;
+
+// ==================== Popup ====================
+$popup-border-radius: vars.$border-radius-large !default;
+$popup-background-color: #fff !default;
+
+$popup-header-height: 130px !default;
+$popup-header-padding: 12px 32px !default;
+
+$popup-title-font-size: vars.$font-size-large-title !default;
+$popup-title-font-color: vars.$font-color-title !default;
+
+$popup-close-icon-size: 32px !default;
+$popup-close-icon-color: #9ea7af !default;
+
+// ==================== SearchBar ====================
+$search-bar-height: 126px !default;
+$search-bar-padding: 0 36px !default;
+$search-bar-background-color: #ffffff !default;
+
+$search-bar-input-height: 70px !default;
+$search-bar-input-border: 1px solid #f3f4f5 !default;
+$search-bar-input-padding: 0 20px 0 40px !default;
+$search-bar-input-background-color: #f8fafb !default;
+
+$search-bar-button-padding-horizontal: 16px !default;
+
+// ==================== SplitLine ====================
+
+$split-line-border-width: vars.$border-width !default;
+$split-line-border-color-1: rgb(13, 34, 56, 0.15) !default; // #0d2238 15%
+$split-line-border-color-2: rgba(2, 3, 5, 0.08) !default; // #0d2238 8%
+
+$split-line-font-color: vars.$font-color-primary !default;
+$split-line-font-size: vars.$font-size-title !default;
+
+$split-line-plain-font-size: vars.$font-size-primary !default;
+$split-line-plain-font-color: vars.$font-color-secondary !default;
+
+$split-line-orientation-margin: 5% !default;
+$split-line-text-padding: 1em !default;
+
+
+// ==================== Tabs ====================
+$tabs-margin: 0 30px !default;
+
+$tabs-header-height: 88px !default;
+$tabs-header-padding: 10px !default;
+$tabs-header-background-color: #e3e8eb !default;
+
+$tabs-item-gap: 10px !default;
+$tabs-item-padding: 0 24px !default;
+$tabs-item-font-size: vars.$font-size-secondary !default;
+
+// color - default
+$tabs-item-default-color: vars.$font-color-secondary !default;
+$tabs-item-default-background-color: rgba(0, 0, 0, 0) !default;
+// color - active
+$tabs-item-active-color: vars.$font-color-title !default;
+$tabs-item-active-background-color: rgba(0, 0, 0, 0) !default;
+// color - disabled
+$tabs-item-disabled-color: vars.$font-color-disable !default;
+$tabs-item-disabled-background-color: rgba(0, 0, 0, 0) !default;
+
+$tabs-item-active-box-background-color: white !default;
+
+$tabs-content-padding: 30px 0 !default;
+
+// ==================== tabs/CardTabs ====================
+$card-tabs-margin-horizontal: 30px !default;
+$card-tabs-border-radius: 20px !default;
+
+// tabs/card-tabs - header
+$card-tabs-header-height: 80px !default;
+$card-tabs-header-background-color: #f8fafb !default;
+$card-tabs-header-font-size: vars.$font-size-secondary !default;
+$card-tabs-header-font-color: vars.$font-color-secondary !default;
+$card-tabs-header-split-lint-color: rgba(vars.$color-black, 0.15) !default;
+
+$card-tabs-tab-active-background-color: #ffffff !default;
+$card-tabs-tab-active-font-color: vars.$font-color-title !default;
+$card-tabs-tab-active-line-height: 4px !default;
+$card-tabs-tab-active-line-color: vars.$font-color-title !default;
+
+$card-tabs-tab-disabled-font-color: vars.$font-color-disable !default;
+
+// tabs/card-tabs - content
+$card-tabs-content-background-color: #ffffff !default;
+$card-tabs-content-padding: 0px !default;
+
+// ==================== tabs/CardTabs ====================
+
+$tab-bar-background: white !default;
+$tab-bar-color: vars.$color-black !default;
+$tab-bar-active-color: vars.$color-primary !default;
+
+$tab-bar-title-icon-gap: 6px !default;
+$tab-bar-title-font-size: vars.$font-size-small !default;
+
+$tab-bar-icon-size: 60px !default;
+
+$tab-bar-item-padding: 14px 0 12px !default;

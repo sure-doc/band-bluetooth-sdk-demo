@@ -1,0 +1,17 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Packages/event-emitter" />
+
+```typescript
+import { EventEmitter } from '@my/event-emitter';
+
+const someEvent = new EventEmitter<string>();
+
+someEvent.emit('hello');
+
+const offEvent = someEvent.on((data) => {
+  console.info(data);
+});
+
+offEvent();
+```

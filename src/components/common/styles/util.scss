@@ -1,0 +1,6 @@
+@use 'sass:color';
+
+/** 改变颜色的透明度，通过百分比 */
+@function adjust-color-alpha-by-percent($color, $percent) {
+  @return color.adjust($color, $alpha: color.alpha($color) * ($percent - 1));
+}

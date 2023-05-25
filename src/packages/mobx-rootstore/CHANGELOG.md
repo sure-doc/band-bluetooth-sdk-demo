@@ -1,0 +1,2 @@
+- 2022-07-28
+  - `getStore`, `useStore` 添加 `autoStore` 参数
