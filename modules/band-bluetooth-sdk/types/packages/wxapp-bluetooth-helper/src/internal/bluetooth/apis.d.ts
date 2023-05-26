@@ -1,0 +1,32 @@
+type ReturnVoid<T extends (...args: any) => any> = (...args: Parameters<T>) => void;
+export interface BluetoothApis {
+    openBluetoothAdapter: ReturnVoid<typeof wx.openBluetoothAdapter>;
+    closeBluetoothAdapter?: ReturnVoid<typeof wx.closeBluetoothAdapter>;
+    getBluetoothAdapterState: ReturnVoid<typeof wx.getBluetoothAdapterState>;
+    onBluetoothDeviceFound: ReturnVoid<typeof wx.onBluetoothDeviceFound>;
+    offBluetoothDeviceFound: ReturnVoid<typeof wx.onBluetoothDeviceFound>;
+    onBLEConnectionStateChange: ReturnVoid<typeof wx.onBLEConnectionStateChange>;
+    offBLEConnectionStateChange: ReturnVoid<typeof wx.offBLEConnectionStateChange>;
+    onBluetoothAdapterStateChange: ReturnVoid<typeof wx.onBluetoothAdapterStateChange>;
+    offBluetoothAdapterStateChange: ReturnVoid<typeof wx.offBluetoothAdapterStateChange>;
+    onBLECharacteristicValueChange: ReturnVoid<typeof wx.onBLECharacteristicValueChange>;
+    offBLECharacteristicValueChange: ReturnVoid<typeof wx.offBLECharacteristicValueChange>;
+    createBLEConnection: ReturnVoid<typeof wx.createBLEConnection>;
+    closeBLEConnection: ReturnVoid<typeof wx.closeBLEConnection>;
+    getConnectedBluetoothDevices: ReturnVoid<typeof wx.getConnectedBluetoothDevices>;
+    startBluetoothDevicesDiscovery: ReturnVoid<typeof wx.startBluetoothDevicesDiscovery>;
+    stopBluetoothDevicesDiscovery: ReturnVoid<typeof wx.stopBluetoothDevicesDiscovery>;
+    getBLEDeviceCharacteristics: ReturnVoid<typeof wx.getBLEDeviceCharacteristics>;
+    getBLEDeviceServices: ReturnVoid<typeof wx.getBLEDeviceServices>;
+    writeBLECharacteristicValue: ReturnVoid<typeof wx.writeBLECharacteristicValue>;
+    notifyBLECharacteristicValueChange: ReturnVoid<typeof wx.notifyBLECharacteristicValueChange>;
+    readBLECharacteristicValue: ReturnVoid<typeof wx.readBLECharacteristicValue>;
+    setBLEMTU: ReturnVoid<typeof wx.setBLEMTU>;
+    getSystemInfoSync: typeof wx.getSystemInfoSync;
+    getStorage: typeof wx.getStorage;
+    setStorage: typeof wx.setStorage;
+    removeStorage: typeof wx.removeStorage;
+}
+export declare function getApis(): BluetoothApis;
+export declare function setApis(apis: BluetoothApis): void;
+export {};

@@ -1,0 +1,30 @@
+{
+  "name": "band-bluetooth-sdk",
+  "version": "0.1.1",
+  "license": "ISC",
+  "homepage": "https://github.com/sure-doc/band-bluetooth-sdk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sure-doc/band-bluetooth-sdk"
+  },
+  "main": "main/index.js",
+  "types": "./types/apps/band-bluetooth-wxapp-sdk/src",
+  "files": [
+    "/main",
+    "/types"
+  ],
+  "scripts": {
+    "dev": "npm run clean && webpack --watch",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --mode=production",
+    "clean": "npx rimraf types"
+  },
+  "devDependencies": {
+    "@my/eslint-config-my": "workspace:*",
+    "cross-env": "^7.0.3",
+    "miniprogram-api-typings": "^3.9.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "5.0.4",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2"
+  }
+}

@@ -1,0 +1,117 @@
+@use '../styles/vars.module.scss' as vars;
+
+$switch-prefix-class: 'switch';
+
+// ==================== Switch ====================
+
+$switch-width: 116px !default;
+$switch-height: 60px !default;
+
+$switch-font-size: 20px !default;
+$switch-font-margin: 16px !default;
+
+$switch-box-margin: 6px !default;
+$switch-checked-box-color: vars.$color-primary !default;
+$switch-checked-font-color: #fff !default;
+
+$switch-unchecked-box-color: vars.$color-secondary !default;
+$switch-unchecked-font-color: vars.$color-primary !default;
+
+$switch-handle-size: 60px !default;
+
+$switch-icon-color: vars.$color-primary !default;
+$switch-icon-size: 40px !default;
+
+.#{$switch-prefix-class} {
+  --checked-box-color: #{$switch-checked-box-color};
+  --checked-font-color: #{$switch-checked-font-color};
+
+  --unchecked-box-color: #{$switch-unchecked-box-color};
+  --unchecked-font-color: #{$switch-unchecked-font-color};
+
+  // use
+  --width: #{$switch-width};
+  --height: #{$switch-height};
+
+  --box-margin: #{$switch-box-margin};
+  --box-color: var(--unchecked-box-color);
+
+  --handle-size: #{$switch-handle-size};
+
+  --icon-color: #{$switch-icon-color};
+  --icon-size: #{$switch-icon-size};
+
+  --font-size: #{$switch-font-size};
+  --font-color: var(--unchecked-font-color);
+  --font-margin: #{$switch-font-margin};
+
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  position: relative;
+  align-self: center;
+  cursor: pointer;
+  min-width: var(--width);
+  height: var(--height);
+  font-size: var(--font-size);
+
+  &-box {
+    position: absolute;
+    width: calc(100% - var(--box-margin) * 2);
+    height: calc(100% - var(--box-margin) * 2);
+    padding: 0 var(--font-margin);
+    left: var(--box-margin);
+    top: var(--box-margin);
+    background: var(--box-color);
+    border-radius: 99999px;
+    box-sizing: border-box;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    color: var(--font-color);
+    transition: background-color 0.3s;
+  }
+
+  &-handle {
+    --handle-margin: calc((var(--height) - var(--handle-size)) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--handle-size);
+    height: var(--handle-size);
+    left: var(--handle-margin);
+    top: var(--handle-margin);
+    border-radius: 999999px;
+    background: #fff;
+    position: absolute;
+    z-index: 2;
+    transition: all 250ms;
+    box-shadow: 0px 0px 32px 0px rgba(13, 33, 55, 0.1);
+  }
+
+  /* 选中状态 */
+  &-checked {
+    .#{$switch-prefix-class}-box {
+      --box-color: var(--checked-box-color);
+      --font-color: var(--checked-font-color);
+      justify-content: left;
+    }
+    .#{$switch-prefix-class}-handle {
+      left: calc(100% - var(--handle-size) - var(--handle-margin));
+    }
+  }
+
+  /* 禁用状态 */
+  &.#{$switch-prefix-class}-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  /* loading图标 */
+  &-icon {
+    --size: var(--icon-size); // IconFont --size
+    color: var(--icon-color);
+  }
+}

@@ -1,0 +1,68 @@
+// ============ 主色 ============
+$color-primary: #007d96 !default;
+// 次要颜色
+$color-secondary: #d9ecef !default;
+// 黑色
+$color-black: #0d2238 !default;
+// 灰色
+$color-gray: #adb6be !default;
+
+// 辅助色
+$color-success: #81c784 !default;
+$color-warning: #ffb74d !default;
+$color-error: #ef7a64 !default;
+
+// ============ 字体颜色 ============
+// 标题
+$font-color-title: $color-black !default;
+// 正文
+$font-color-primary: rgba($color-black, 0.85) !default;
+// 次要文本
+$font-color-secondary: rgba($color-black, 0.6) !default;
+// 辅助描述文本
+$font-color-describe: rgba($color-black, 0.4) !default;
+// 禁用
+$font-color-disable: rgba($color-black, 0.3) !default;
+
+// ============ 字体大小 ============
+// 特大: 用于突出数据显示
+$font-size-extra-large: 50px !default;
+$line-height-extra-large: ($font-size-extra-large + 16px) !default;
+// 大标题: 用于大标题显示
+$font-size-large-title: 40px !default;
+$line-height-large-title: ($font-size-large-title + 16px) !default;
+// 小标题: 用于小标题显示，弹窗显示等
+$font-size-title: 36px !default;
+$line-height-title: ($font-size-title + 16px) !default;
+// 正文: 用于大部分正文内容
+$font-size-primary: 32px !default;
+$line-height-primary: ($font-size-primary + 16px) !default;
+// 次要文本: 用于部分正文和提示辅助描述文字
+$font-size-secondary: 28px !default;
+$line-height-secondary: ($font-size-secondary + 16px) !default;
+// 小字体: 部分辅助性文字和图表单位等显示
+$font-size-small: 24px !default;
+$line-height-small: ($font-size-small + 16px) !default;
+
+// ============ 背景色 ============
+
+$background-color: #f1f5f7 !default;
+// 深色背景
+$background-color-dark: rgba($color-black, 0.5) !default;
+
+// ============ 边框 ============
+
+$border-color: rgba($color-black, 0.08) !default;
+$border-width: 1px !default;
+$border-style: solid !default;
+
+// ============ 圆角 ============
+// 小圆角
+$border-radius-small: 8px !default;
+// 中圆角
+$border-radius-medium: 16px !default;
+// 大圆角
+$border-radius-large: 32px !default;
+
+// ============ 投影 ============
+$box-shadow: 0 0 16px rgba($color-black, 0.04) !default;

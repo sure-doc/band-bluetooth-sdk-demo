@@ -1,0 +1,179 @@
+@use '../styles/theme.module.scss' as theme;
+@use '../styles/mixins.module.scss' as mixins;
+
+$list-prefix-class: 'list';
+$list-item-class-prefix: 'list-item';
+
+.#{$list-prefix-class} {
+  // card
+  --card-border-radius: #{theme.$card-border-radius};
+  --card-margin: #{theme.$list-card-margin};
+
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+
+  &.#{$list-prefix-class}--shadow {
+    @include mixins.box-shadow();
+  }
+
+  &-inner {
+    & > .list-item:last-child::after {
+      content: none;
+    }
+  }
+  &-default {
+    border-right: none;
+    border-left: none;
+
+    &:not(.#{$list-prefix-class}-border-disabled) {
+      &::before {
+        @include mixins.setLine();
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+
+      &::after {
+        @include mixins.setLine();
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  &-card {
+    margin: var(--card-margin);
+    border-radius: var(--card-border-radius);
+  }
+}
+
+.#{$list-item-class-prefix} {
+  --prefix-width: 'auto';
+  --align-items: center;
+  --min-height: #{theme.$list-item-min-height};
+  --line-height: #{theme.$list-item-line-height};
+  --font-size: #{theme.$list-item-font-size};
+  --font-color: #{theme.$list-item-font-color};
+
+  --row-gap: 30px;
+  --column-gap: 30px;
+
+  --border-color: #{theme.$list-item-border-color};
+  --padding-top: #{theme.$list-item-padding-top};
+  --padding-bottom: #{theme.$list-item-padding-bottom};
+  --padding-left: #{theme.$list-item-padding-left};
+  --padding-right: #{theme.$list-item-padding-right};
+
+  --active-background-color: #{theme.$list-item-active-background-color};
+  // title
+  --title-font-size: #{theme.$list-item-title-font-size};
+  --title-font-color: #{theme.$list-item-title-font-color};
+  --title-width: auto;
+  // content
+  // description
+  --description-font-color: #{theme.$list-item-description-font-color};
+  --description-font-size: #{theme.$list-item-description-font-size};
+  // arrow
+  --arrow-color: #{theme.$list-item-arrow-color};
+  --arrow-font-size: #{theme.$list-item-arrow-font-size};
+
+  position: relative;
+  box-sizing: border-box;
+  color: var(--font-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
+  &::after {
+    @include mixins.setLine();
+    left: var(--padding-left);
+    right: var(--padding-right);
+    bottom: 0;
+  }
+
+  &-active {
+    background-color: var(--active-background-color);
+  }
+
+  &-main {
+    box-sizing: border-box;
+    min-height: var(--min-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: var(--row-gap);
+    padding: var(--padding-top) var(--padding-right) var(--padding-bottom) var(--padding-left);
+  }
+
+  &-middle {
+    flex: auto;
+    display: flex;
+    align-items: var(--align-items);
+    column-gap: var(--column-gap);
+  }
+
+  &-content-container {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--row-gap);
+  }
+  &-prefix {
+    width: var(--prefix-width);
+    flex: none;
+  }
+  &-suffix {
+    flex: none;
+    max-width: 56%;
+  }
+
+  &-content-middle {
+    flex: auto;
+    display: flex;
+    align-items: var(--align-items);
+    column-gap: var(--column-gap);
+  }
+
+  &-title {
+    flex: none;
+    width: var(--title-width);
+    color: var(--title-font-color);
+    font-size: var(--title-font-size);
+  }
+
+  &-content-wrapper {
+    flex: auto;
+  }
+
+  &-description {
+    color: var(--description-font-color);
+    font-size: var(--description-font-size);
+  }
+
+  &-arrow {
+    flex: none;
+    display: flex;
+    align-items: center;
+    color: var(--arrow-color);
+    font-size: var(--arrow-font-size);
+  }
+
+  &:not(.#{$list-item-class-prefix}-block-content) {
+    .#{$list-item-class-prefix}-content {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    & > .#{$list-item-class-prefix}-main {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    &:active {
+      background-color: unset;
+    }
+  }
+}

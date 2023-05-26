@@ -1,0 +1,13 @@
+{
+  "name": "@my/taro-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "peerDependencies": {
+    "@my/taro-assets": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@my/taro-assets": {
+      "optional": true
+    }
+  }
+}

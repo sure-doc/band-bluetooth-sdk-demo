@@ -1,0 +1,9 @@
+node_modules
+**/.next/**
+**/_next/**
+**/dist/**
+.eslintrc.js
+prettier.config.js
+swagger.ts
+
+docs/code/array/*.ts

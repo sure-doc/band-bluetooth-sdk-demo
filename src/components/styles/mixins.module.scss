@@ -1,0 +1,94 @@
+@use './vars.module.scss' as vars;
+
+@mixin var($property, $var1: false, $var2: false, $var3: false, $var4: false) {
+  @if $var1 {
+    #{$property}: $var1;
+  } @else if $var2 {
+    #{$property}: $var2;
+  } @else if $var3 {
+    #{$property}: $var3;
+  } @else if $var4 {
+    #{$property}: $var4;
+  }
+}
+
+@mixin reset-component() {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: vars.$font-color-primary;
+  font-size: vars.$font-size-primary;
+  list-style: none;
+}
+
+// ============ 字体大小 ============
+// 特大: 用于突出数据显示
+@mixin font-size-extra-large() {
+  font-size: vars.$font-size-extra-large;
+  line-height: vars.$line-height-extra-large;
+}
+// 大标题: 用于大标题显示
+@mixin font-size-large-title() {
+  font-size: vars.$font-size-large-title;
+  line-height: vars.$line-height-large-title;
+}
+// 小标题: 用于小标题显示，弹窗显示等
+@mixin font-size-title() {
+  font-size: vars.$font-size-title;
+  line-height: vars.$line-height-title;
+}
+// 正文: 用于大部分正文内容
+@mixin font-size-primary() {
+  font-size: vars.$font-size-primary;
+  line-height: vars.$line-height-primary;
+}
+// 次要文本: 用于部分正文和提示辅助描述文字
+@mixin font-size-secondary() {
+  font-size: vars.$font-size-secondary;
+  line-height: vars.$line-height-secondary;
+}
+// 小字体: 部分辅助性文字和图表单位等显示
+@mixin font-size-small() {
+  font-size: vars.$font-size-small;
+  line-height: vars.$line-height-small;
+}
+
+// 边框
+@mixin border {
+  border: vars.$border-width vars.$border-style vars.$border-color;
+}
+// 分割线 bottom
+@mixin borderBottom {
+  border-bottom: vars.$border-width vars.$border-style vars.$border-color;
+}
+// 分割线 top
+@mixin borderTop {
+  border-top: vars.$border-width vars.$border-style vars.$border-color;
+}
+
+// box-shadow
+@mixin box-shadow {
+  box-shadow: vars.$box-shadow;
+}
+
+// 圆角
+@mixin border-radius-small {
+  border-radius: vars.$border-radius-small;
+}
+@mixin border-radius-medium {
+  border-radius: vars.$border-radius-medium;
+}
+@mixin border-radius-large {
+  border-radius: vars.$border-radius-large;
+}
+
+// --------------- other
+
+@mixin setLine() {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  border-bottom: 1px solid var(--border-color, vars.$border-color);
+  transform: scaleY(0.5);
+}

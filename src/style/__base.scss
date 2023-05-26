@@ -1,0 +1,3 @@
+// 这个文件会在所有导入的 scss 前面引用, 会在入口文件自动加上以下代码
+
+@use '@/components/styles/vars.scss' as __sport-components-mobile_vars;

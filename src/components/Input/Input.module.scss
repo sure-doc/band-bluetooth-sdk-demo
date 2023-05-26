@@ -1,0 +1,121 @@
+@use '../styles/theme.module.scss' as theme;
+@import '../List/List.module.scss';
+
+$input-prefix-class: 'input';
+
+.#{$input-prefix-class}-wrapper {
+  --padding: #{theme.$input-padding};
+  --font-size: #{theme.$input-font-size};
+  --color: #{theme.$input-font-color};
+  --line-height: #{theme.$input-line-height};
+  --placeholder-color: var(--color-light);
+  --disabled-color: var(--color-weak);
+  --align: left;
+  --min-height: calc(var(--line-height) * 1em);
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: var(--padding);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  text-align: var(--align);
+  color: var(--color);
+}
+
+.#{$input-prefix-class} {
+  flex: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  border: 0;
+  outline: none;
+  appearance: none;
+  min-height: var(--min-height);
+
+  // h5
+  > :global(.weui-input) {
+    height: auto;
+    min-height: var(--min-height);
+    line-height: var(--line-height);
+  }
+
+  // &::placeholder {
+  //   color: var(--placeholder-color);
+  //   font-family: inherit;
+  // }
+
+  // &:-webkit-autofill {
+  //   background-color: transparent;
+  // }
+
+  // &:disabled {
+  //   color: var(--disabled-color);
+  //   cursor: not-allowed;
+  //   opacity: 1;
+  //   -webkit-text-fill-color: var(--disabled-color);
+  // }
+
+  // &:read-only {
+  //   cursor: default;
+  // }
+
+  // &:invalid {
+  //   box-shadow: none;
+  // }
+
+  // &::-ms-clear {
+  //   display: none;
+  // }
+  // &::-webkit-search-cancel-button {
+  //   display: none;
+  // }
+  // &::-webkit-search-decoration {
+  //   display: none;
+  // }
+
+  // // for ios
+  // &[type='date'],
+  // &[type='time'],
+  // &[type='datetime-local'] {
+  //   min-height: 1.5em;
+  // }
+
+  // // for safari
+  // &[type='search'] {
+  //   -webkit-appearance: none;
+  // }
+
+  // &[readonly] {
+  //   pointer-events: none;
+  // }
+}
+
+.#{$input-prefix-class}-clear {
+  flex: none;
+  color: var(--placeholder-color);
+  padding-left: 16px;
+  cursor: pointer;
+
+  .#{$input-prefix-class}-clear-icon {
+    display: block;
+    --size: 40px;
+    --color: #616161;
+  }
+}
+
+.#{$list-item-class-prefix}-content {
+  .#{$input-prefix-class} {
+    --align: right;
+  }
+}
