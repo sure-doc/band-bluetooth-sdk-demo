@@ -1,4 +1,5 @@
 export declare function initFindDevice(): void;
+export declare function destroyFindDeviceManager(): void;
 export declare const findDeviceObservable: ({ mac, timeout }: {
     mac: string;
     timeout?: number | undefined;

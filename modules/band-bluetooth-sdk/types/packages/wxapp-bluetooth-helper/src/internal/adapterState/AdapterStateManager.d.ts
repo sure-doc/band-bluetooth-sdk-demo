@@ -10,6 +10,7 @@ export declare class AdapterStateManager {
         prevState: AdapterState;
     }>;
     discovering$: Observable<boolean>;
+    private destroy$;
     constructor();
     /** 获取蓝牙状态 */
     getBluetoothAdapterState(): GetBluetoothAdapterStateResult;
@@ -63,4 +64,5 @@ export declare class AdapterStateManager {
     onBluetoothAdapterAvailableChangeObservable({ immediate }?: {
         immediate?: boolean;
     }): Observable<boolean>;
+    destroy(): void;
 }

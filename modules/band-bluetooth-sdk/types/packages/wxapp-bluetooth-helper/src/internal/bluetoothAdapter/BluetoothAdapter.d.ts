@@ -28,6 +28,8 @@ export declare class BluetoothAdapter {
     /** 目前期望是否打开 */
     private expectOpen$;
     private realState$;
+    /** 卸载 */
+    private destroy$;
     constructor();
     /**
      * 打开
@@ -63,6 +65,7 @@ export declare class BluetoothAdapter {
     onOpenedChange(callback: (opened: boolean) => void, options?: {
         immediate?: boolean;
     }): () => void;
+    destroy(): void;
     private doCheck;
     private doOpenObservable;
 }

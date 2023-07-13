@@ -25,3 +25,5 @@ export declare namespace InitBluetoothHelper {
  * 初始化
  */
 export declare function initBluetoothHelper(options?: InitBluetoothHelper.Options): void;
+/** 销毁蓝牙初始化 */
+export declare function destroyBluetoothHelper(): void;

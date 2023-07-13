@@ -1,4 +1,5 @@
 /// <reference types="miniprogram-api-typings" />
+export { destroyDeviceConnectManager } from './getDeviceConnectionMananger';
 export type { DeviceConnectionState, DeviceConnection, ConnectDevice, DisconnectDevice, OnConnectionConnectedChange, OnConnectionStateChange, GetConnectedDevices, GetConnectionState, GetLatestConnectedDevices, } from './types';
 export declare const connectDevice: ({ deviceId, timeout }: import("./types").ConnectDevice.Option) => Promise<undefined>;
 export declare const disconnectDevice: ({ deviceId }: import("./types").DisconnectDevice.Option) => Promise<void>;

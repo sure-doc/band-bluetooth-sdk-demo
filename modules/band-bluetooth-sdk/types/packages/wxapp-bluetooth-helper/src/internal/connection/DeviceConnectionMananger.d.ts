@@ -3,6 +3,7 @@ import { ConnectDevice, DeviceConnectionState, DisconnectDevice, OnConnectionCon
 export declare class DeviceConnectionMananger {
     private deviceConnectionMap;
     private connectionStateChange$;
+    private destroy$;
     constructor();
     /**
      * 连接设备
@@ -89,4 +90,5 @@ export declare class DeviceConnectionMananger {
         state: DeviceConnectionState;
         prevState: DeviceConnectionState;
     }>;
+    destroy(): void;
 }

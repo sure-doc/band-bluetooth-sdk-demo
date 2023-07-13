@@ -1,4 +1,4 @@
-export { initBluetoothHelper } from './internal/initBluetoothHelper';
+export { initBluetoothHelper, destroyBluetoothHelper } from './internal/initBluetoothHelper';
 export { InitBluetoothHelper } from './internal/initBluetoothHelper';
 export { mockWxBluetoothApi } from './internal/mockWxApi';
 export { openBluetoothAdapter, closeBluetoothAdapter, checkBluetoothAdapterOpenedState, onBluetoothAdapterOpenStateChange, onBluetoothAdapterOpenedChange, onBluetoothAdapterOpenedChangeObservable, getBluetoothAdapterOpenState, } from './internal/bluetoothAdapter';

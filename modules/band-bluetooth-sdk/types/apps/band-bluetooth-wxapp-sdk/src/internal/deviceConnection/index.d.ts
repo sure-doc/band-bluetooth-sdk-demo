@@ -1,4 +1,5 @@
 export declare function initDeviceConnection(): void;
+export declare function destroytDeviceConnectionManager(): void;
 export * from './types';
 export declare const connectDevice: (option: import("./types").ConnectDevice.Option) => Promise<void>;
 export declare const connectDeviceObservable: ({ mac, ...rest }: import("./types").ConnectDevice.Option) => import("rxjs").Observable<void>;

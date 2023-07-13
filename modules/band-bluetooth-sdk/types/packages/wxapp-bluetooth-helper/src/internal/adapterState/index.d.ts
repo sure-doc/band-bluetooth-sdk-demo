@@ -1,4 +1,5 @@
 import { GetBluetoothAdapterStateResult, GetBluetoothAdapterAvailableResult, OnBluetoothAdapterAvailableChangeOption, OnBluetoothAdapterStateChangeOption } from './types';
+export { destroyStateManager } from './getAdapterStateManager';
 export type { AdapterState } from './types';
 export declare namespace GetBluetoothAdapterState {
     type Result = GetBluetoothAdapterStateResult;

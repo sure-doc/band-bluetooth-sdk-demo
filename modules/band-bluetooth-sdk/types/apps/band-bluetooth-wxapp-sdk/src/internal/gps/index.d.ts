@@ -1,6 +1,7 @@
 export * from './types';
 export * from './events';
 export declare function initGps(): void;
+export declare function destroyGps(): void;
 export declare const handleDeviceRequestGps: ({ uploadData, mac }: {
     uploadData: import("src").StartDataSync.UploadNormalData<any>;
     mac: string;

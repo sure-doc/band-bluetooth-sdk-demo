@@ -10,6 +10,7 @@ export declare class DevicesScanner {
     private onDeviceFound$;
     private scanDevicesDataList$;
     private state;
+    private destroy$;
     constructor();
     scanDevicesObservable(option: ScanDevicesObservable.Option): Observable<import("./types").ScanDevicesResult>;
     /**
@@ -20,4 +21,5 @@ export declare class DevicesScanner {
      * ```
      */
     scanDevices(option: ScanDevices.Option): () => void;
+    destroy(): void;
 }
